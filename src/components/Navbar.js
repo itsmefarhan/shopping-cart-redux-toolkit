@@ -1,10 +1,8 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
+import { AppBar, Toolbar, Typography, IconButton } from "@material-ui/core";
 import LocalMallIcon from "@material-ui/icons/LocalMall";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,11 +29,13 @@ const Navbar = () => {
             color="inherit"
             aria-label="menu"
           >
-            <LocalMallIcon />
+            <Link to="/" style={{ color: "white" }} className="link">
+              <LocalMallIcon />
+            </Link>
           </IconButton>
           <Typography variant="h6" className={classes.title}>
             Shoe Store
-          </Typography>          
+          </Typography>
         </Toolbar>
       </AppBar>
     </div>

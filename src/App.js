@@ -4,15 +4,16 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Container } from "@material-ui/core";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
+import Product from "./components/Product";
 
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
       <Container>
-        <h1>Shoe Store with React Router v6</h1>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path=":productId" element={<Product />} />
         </Routes>
       </Container>
     </BrowserRouter>
