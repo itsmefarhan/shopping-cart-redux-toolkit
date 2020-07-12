@@ -5,6 +5,7 @@ import { Container } from "@material-ui/core";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Product from "./components/Product";
+import About from './components/About'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path=":productId" element={<Product />} />
+          <Route path="about" element={<About />} />
         </Routes>
       </Container>
     </BrowserRouter>

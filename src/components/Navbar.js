@@ -36,6 +36,11 @@ const Navbar = () => {
           <Typography variant="h6" className={classes.title}>
             Shoe Store
           </Typography>
+          <Typography variant="body2" >
+            <Link to='about' className='link' style={{color:'white'}}>
+            About
+            </Link>
+          </Typography>
         </Toolbar>
       </AppBar>
     </div>
