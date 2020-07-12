@@ -21,7 +21,7 @@ const Navbar = () => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" style={{ background: "#444" }}>
         <Toolbar>
           <IconButton
             edge="start"
