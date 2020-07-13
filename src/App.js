@@ -5,7 +5,7 @@ import { Container } from "@material-ui/core";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Product from "./components/Product";
-import About from './components/About'
+import About from "./components/About";
 
 function App() {
   return (

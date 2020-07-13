@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    marginBottom:'7%'
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -21,7 +22,7 @@ const Navbar = () => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" style={{ background: "#444" }}>
+      <AppBar position="fixed" style={{ background: "#444" }}>
         <Toolbar>
           <IconButton
             edge="start"
