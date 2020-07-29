@@ -6,7 +6,7 @@ const About = () => {
     <Container style={{ marginTop: 40 }}>
       <Typography variant="h5">About Shoe Store</Typography>
       <Typography variant="body1">
-        This app is build with React Router version 6 and Material UI.
+        This application is built with React Router version 6 and Material UI.
       </Typography>
     </Container>
   );
