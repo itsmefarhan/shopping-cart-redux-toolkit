@@ -23,7 +23,7 @@ const Product = () => {
     <Grid container>
       <Grid item sm={2} />
 
-      <Grid container item sm={8} spacing={0}>
+      <Grid container item sm={8}>
         <Grid item sm={7} xs={12}>
           <Slide left>
             <Card style={{ marginTop: 20 }}>

@@ -6,13 +6,28 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action) => {
-      // add item
+      return state.map((item) => {
+        if (item.id !== action.payload.id) return item;
+        return {
+          ...item,
+          inCart: true,
+        };
+      });
+    },
+    removeFromCart: (state, action) => {
+      return state.map((item) => {
+        if (item.id !== action.payload.id) return item;
+        return {
+          ...item,
+          inCart: false,
+        };
+      });
     },
   },
 });
 
 const store = configureStore({ reducer: cartSlice.reducer });
 
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, removeFromCart } = cartSlice.actions;
 
 export { cartSlice, store };

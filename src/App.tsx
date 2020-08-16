@@ -2,11 +2,11 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Container } from "@material-ui/core";
-
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Product from "./components/Product";
 import About from "./components/About";
+import Cart from "./components/Cart";
 
 import { Provider } from "react-redux";
 import { store } from "./store";
@@ -21,6 +21,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path=":productId" element={<Product />} />
             <Route path="about" element={<About />} />
+            <Route path="cart" element={<Cart />} />
           </Routes>
         </Container>
       </BrowserRouter>

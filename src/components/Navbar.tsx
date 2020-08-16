@@ -7,7 +7,10 @@ import { Link } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    marginBottom: "7%",
+  },
+  offset: {
+    ...theme.mixins.toolbar,
+    flexGrow: 1,
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -22,7 +25,7 @@ const Navbar = () => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="fixed" style={{ background: "#444" }}>
+      <AppBar style={{ background: "#444" }}>
         <Toolbar>
           <IconButton
             edge="start"
@@ -38,12 +41,22 @@ const Navbar = () => {
             Shopping Cart
           </Typography>
           <Typography variant="body2">
+            <Link
+              to="cart"
+              className="link"
+              style={{ color: "white", marginRight: "20px" }}
+            >
+              Cart
+            </Link>
+          </Typography>
+          <Typography variant="body2">
             <Link to="about" className="link" style={{ color: "white" }}>
               About
             </Link>
           </Typography>
         </Toolbar>
       </AppBar>
+      <div className={classes.offset} />
     </div>
   );
 };
