@@ -8,14 +8,18 @@ import {
   CardMedia,
   Typography,
 } from "@material-ui/core";
+import { useSelector } from "react-redux";
+import { ProductItem } from "../../types";
+// @ts-ignore
 import Slide from "react-reveal/Slide";
-import { shoes } from "./data";
 
 const Product = () => {
   const { productId } = useParams();
-  const shoe = shoes.find((shoe) => shoe.id.toString() === productId);
 
-  return (
+  const products = useSelector((state: ProductItem[]) => state);
+  const product = products.find((prod) => prod.id === productId);
+
+  return product !== undefined ? (
     <Grid container>
       <Grid item sm={2} />
 
@@ -24,7 +28,7 @@ const Product = () => {
           <Slide left>
             <Card style={{ marginTop: 20 }}>
               <CardActionArea>
-                <CardMedia image={shoe.photo} style={{ height: 500 }} />
+                <CardMedia image={product.imageUrl} style={{ height: 500 }} />
               </CardActionArea>
             </Card>
           </Slide>
@@ -35,7 +39,7 @@ const Product = () => {
               <CardActionArea>
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
-                    {shoe.name}
+                    {product.title}
                   </Typography>
 
                   <Typography
@@ -43,10 +47,10 @@ const Product = () => {
                     color="textSecondary"
                     component="p"
                   >
-                    ${shoe.price}
+                    ${product.price}
                   </Typography>
                   <Typography variant="body2" component="p">
-                    {shoe.description}
+                    {product.description}
                   </Typography>
                   <Typography style={{ marginTop: 20 }}>
                     <Link to="/" className="link">
@@ -62,6 +66,6 @@ const Product = () => {
 
       <Grid item sm={2} />
     </Grid>
-  );
+  ) : null;
 };
 export default Product;

@@ -9,22 +9,26 @@ import {
   Typography,
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { ProductItem } from "../../types";
+// @ts-ignore
 import Zoom from "react-reveal/Zoom";
-import { shoes } from "./data";
 
 const Home = () => {
+  const products = useSelector((state: ProductItem[]) => state);
+
   return (
     <Grid container>
-      {shoes.map((shoe) => (
-        <Grid item md={4} sm={6} xs={12} key={shoe.id}>
-          <Link to={`/${shoe.id}`} className="link">
+      {products.map((product) => (
+        <Grid item md={4} sm={6} xs={12} key={product.id}>
+          <Link to={`/${product.id}`} className="link">
             <Zoom>
               <Card style={{ margin: 20 }}>
                 <CardActionArea>
-                  <CardMedia image={shoe.photo} style={{ height: 200 }} />
+                  <CardMedia image={product.imageUrl} style={{ height: 200 }} />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
-                      {shoe.name}
+                      {product.title}
                     </Typography>
 
                     <Typography
@@ -32,12 +36,12 @@ const Home = () => {
                       color="textSecondary"
                       component="p"
                     >
-                      ${shoe.price}
+                      ${product.price}
                     </Typography>
                   </CardContent>
                 </CardActionArea>
                 <CardActions>
-                  <Link to={`/${shoe.id}`} className="link">
+                  <Link to={`/${product.id}`} className="link">
                     Learn More
                   </Link>
                 </CardActions>

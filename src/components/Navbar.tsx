@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    marginBottom:'7%'
+    marginBottom: "7%",
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -35,11 +35,11 @@ const Navbar = () => {
             </Link>
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            Shoe Store
+            Shopping Cart
           </Typography>
-          <Typography variant="body2" >
-            <Link to='about' className='link' style={{color:'white'}}>
-            About
+          <Typography variant="body2">
+            <Link to="about" className="link" style={{ color: "white" }}>
+              About
             </Link>
           </Typography>
         </Toolbar>
